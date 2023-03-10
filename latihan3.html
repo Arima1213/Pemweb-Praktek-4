@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.3.min.js"></script>
+    <script lang="javascript">
+      $(document).ready(() => {
+        const box = $(".box");
+        let con = true;
+
+        $(".Btnfadeout").click(() => box.fadeOut("fast"));
+        $(".Btnfadein").click(() => box.fadeIn("fast"));
+        $(".BtnFade").click(() => {
+          box.toggleClass("boxOpacity", con);
+          con = !con;
+        });
+      });
+    </script>
+    <style>
+      body {
+        width: 100vmax;
+        height: 100vmin;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 300px;
+        height: 300px;
+        background-color: wheat;
+        border-radius: 5%;
+        box-shadow: 0px -25px 20px -20px rgba(0, 0, 0, 0.45),
+          25px 0 20px -20px rgba(0, 0, 0, 0.45),
+          0px 25px 20px -20px rgba(0, 0, 0, 0.45),
+          -25px 0 20px -20px rgba(0, 0, 0, 0.45);
+      }
+      .box {
+        background-color: yellow;
+        width: 70%;
+        height: 70%;
+        margin: auto;
+        margin-top: 20px;
+        border-radius: 5%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+
+      .boxOpacity {
+        opacity: 0.3;
+      }
+      .btn {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 12px;
+      }
+      button {
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 20px;
+        border-style: none;
+        background-color: white;
+      }
+      button:focus {
+        background-color: rgb(253, 253, 165);
+      }
+    </style>
+    <title>Fade in/out/opcity</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="btn">
+        <button class="Btnfadeout">Fade Out</button>
+        <button class="Btnfadein">Fade In</button>
+        <button class="BtnFade">Fade 0.3</button>
+      </div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.3.min.js"></script>
+    <script lang="javascript">
+      $(document).ready(()=>{
+          setTimeout(() => {
+            $("#kotak").fadeOut("slow", ()=>{
+              $("#kotak").remove();
+          })
+          }, 3000);
+      })
+    </script>
+    <style>
+      #kotak {
+        width: 300px;
+        height: 50px;
+        background: lightyellow;
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h3 id="kotak">perhatikaan kotak ini akan hilang pada 3000ms</h3>
+  </body>
+</html>

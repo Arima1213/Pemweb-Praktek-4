@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.3.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(() => {
+        for (let i = 1; i <= 3; i++) {
+          $(`.sembunyi${i}`).click(() => {
+            $(`#foto${i}`).hide("slow");
+          });
+          $(`.tampil${i}`).click(() => {
+            $(`#foto${i}`).show("slow");
+          });
+        }
+      });
+    </script>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    </style>
+    <title>Hide/Show Image</title>
+  </head>
+  <body>
+    <div class="container">
+      <button class="sembunyi1">sembunyikan Gambar1</button>
+      <button class="tampil1">tampilkan Gambar1</button>
+      <p><img id="foto1" src="logoupnbaru.png" height="300PX" /></p>
+    </div>
+    <div class="container">
+      <button class="sembunyi2">sembunyikan Gambar2</button>
+      <button class="tampil2">tampilkan Gambar2</button>
+      <p><img id="foto2" src="logoupnbaru.png" height="300PX" /></p>
+    </div>
+    <div class="container">
+      <button class="sembunyi3">sembunyikan Gambar3</button>
+      <button class="tampil3">tampilkan Gambar3</button>
+      <p><img id="foto3" src="logoupnbaru.png" height="300PX" /></p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="jquery-3.6.3.min.js"></script>
+    <script lang="javascript">
+      $(document).ready(() => {
+        $(".kotak").dblclick((e) => {
+          var clickedDivClass = e.target.classList[1]; // mengambil class dari div yang di dblclick
+          clickedDivClass = $(`.${clickedDivClass}`).attr('class').split(' ')[1]  // memotong dan mengambil class kedua dari div
+          $(`.${clickedDivClass}`).addClass("kotakmerah");  // add the class to the div with the same class name
+          setTimeout(() => {
+            $(`.${clickedDivClass}`).removeClass("kotakmerah");// remove the class from the div with the same class name
+          }, 1000);
+        });
+      });
+    </script>
+    <style>
+      body {
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        justify-content: space-around;
+      }
+      .kotak {
+        height: 200px;
+        width: 200px;
+        background-color: yellow;
+        margin: 20px;
+      }
+      .kotakmerah {
+        background-color: red;
+      }
+    </style>
+    <title>Ubah Warnah Kotak</title>
+  </head>
+  <body>
+    Double Click to change the box color and back to yellow after 1 second
+    <div class="container">
+      <div class="kotak kotak1"></div>
+      <div class="kotak kotak2"></div>
+      <div class="kotak kotak3"></div>
+      <div class="kotak kotak4"></div>
+    </div>
+  </body>
+</html>
